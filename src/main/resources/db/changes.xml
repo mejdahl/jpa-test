@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="1" author="vi-b-hse">
+        <createTable tableName="school">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="pk_school"/>
+            </column>
+            <column name="helper_id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="fk_gradduate"/>
+            </column>
+        </createTable>
+        <createTable tableName="student">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="pk_student"/>
+            </column>
+            <column name="school_id" type="uuid"/>
+            <column name="navn" type="varchar(100)"/>
+        </createTable>
+        <createTable tableName="graduate">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="pk_graduate"/>
+            </column>
+            <column name="tutor"  type="varchar(100)"/>
+            <column name="test"  type="number(10)"/>
+        </createTable>
+        <createTable tableName="freshman">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="pk_freshman"/>
+            </column>
+            <column name="mentor"  type="varchar(100)"/>
+            <column name="test"  type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

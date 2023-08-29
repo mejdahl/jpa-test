@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.2'
+    id 'groovy'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'dk.domstol.test'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.liquibase:liquibase-core:4.19.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    //implementation 'com.microsoft.sqlserver:mssql-jdbc:10.2.3.jre17'
+    runtimeOnly 'com.h2database:h2:2.1.214'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //testImplementation 'com.h2database:h2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.hibernate:hibernate-jpamodelgen:6.2.7.Final'
+
+}
